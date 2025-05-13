@@ -39,7 +39,6 @@ function Footer() {
           </ul>
           <ul>
             <li>Media Center</li>
-            <li>Pricacy</li>
             <li>Contact us</li>
           </ul>
           <ul>
