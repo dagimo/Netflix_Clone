@@ -1,63 +1,92 @@
-.banner{
-    margin-top: 10vh;
-    height: 80vh;
-    margin-bottom: -80px;
+.banner {
+    position: relative; /* Needed for absolute positioning of content */
     color: white;
     object-fit: contain;
-}
-
-.banner_contents{
+    height: 100vh; /* Or a specific height like 600px */
+    width: 100%; /* Make it full width */
+    display: flex; /* Use flexbox to position content */
+    flex-direction: column; /* Stack content vertically initially */
+    justify-content: flex-end; /* Push content to the bottom initially */
+    padding-bottom: 5rem; /* Add some padding at the bottom for the fade */
+  }
+  
+  .banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* This will hold the background image set in your React component */
+    z-index: -1; /* Place the image behind the content */
+  }
+  
+  .banner_contents {
     margin-left: 30px;
-    padding-top: 300px;
-    height: 190px;
-}
-
-.banner_title{
+    padding-top: 0; /* Remove the large top padding */
+    padding-left: 0; /* Adjust as needed */
+    padding-bottom: 5rem; /* Add some bottom padding for spacing */
+    max-width: 600px; /* Limit the width of the text content */
+    z-index: 1; /* Ensure text is above the image */
+  }
+  
+  .banner_title {
     font-size: 3rem;
     font-weight: 800;
     padding-bottom: 0.3rem;
-}
-
-.banner_description{
+  }
+  
+  .banner_description {
     width: 45rem;
-    line-height: 1;
+    line-height: 1.3; /* Adjust line height for better readability */
     padding: 1rem 0;
     font-size: 1rem;
     max-width: 360px;
-    height: 80px;
-}
-
-.banner_button {
+    height: auto; /* Adjust height as needed */
+  }
+  
+  .banner_buttons {
+    display: flex; /* Arrange buttons horizontally */
+  }
+  
+  .banner_button {
     cursor: pointer;
     color: #fff;
     outline: none;
     border: none;
     font-size: 1.2rem;
     font-weight: 700;
-    border-radius: 02vw;
-    padding: 1rem 3rem;
-    margin-right: 2rem;
-    background-color: rgba(51,51,51,0.5);
-}
-
-.play {
+    border-radius: 0.2vw;
+    padding: 1rem 2rem; /* Adjust padding for better fit */
+    margin-right: 1rem; /* Adjust spacing between buttons */
+    background-color: rgba(51, 51, 51, 0.5);
+  }
+  
+  .play {
     color: #000;
     background-color: #fff;
-}
-
-.banner_button:hover{
+  }
+  
+  .banner_button:hover {
     color: #000;
     background-color: #c6c6c6;
-    transition: a110.2s;
-}
-
-.banner_fadeBottom {
-    height: 40vh;
+    transition: all 0.2s;
+  }
+  
+  .banner_fadeBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh; /* Adjust fade height */
     background-image: linear-gradient(
-        180deg,
-        transparent,
-        rgb(37,37,37,0.91),
-        #111
+      180deg,
+      transparent,
+      rgba(37, 37, 37, 0.61),
+      #111
     );
-
-}
+    z-index: 1; /* Ensure fade is above the image */
+  }

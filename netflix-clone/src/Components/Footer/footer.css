@@ -1,6 +1,94 @@
-.footer_outer_container{
+.footer_outer_container {
     background-color: #111;
-    color: gray;
+    color: #757575;
+    padding: 40px 0;
+    display: grid;
+
+    /* justify-content: center; */
+    width: 100%;
+  }
+  
+  .footer_inner_container {
+    max-width: 980px;
+    padding: 0 20px;
     display: flex;
-    justify-content: center;
-}
+    flex-direction: column; /* Stack icons and link container vertically */
+    align-items: center;
+  }
+  
+  .footer_icons {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .footer_icon {
+    margin-right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .footer_icon:last-child {
+    margin-right: 0;
+  }
+  
+  .footer_links_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Create columns of links */
+    gap: 20px; /* Spacing between link groups */
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  
+  .footer_links_container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer_links_container ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer_link {
+    color: #757575;
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+  
+  .footer_link:hover {
+    text-decoration: underline;
+  }
+  
+  .footer_copyright {
+    font-size: 0.8rem;
+    color: #757575;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .footer_inner_container {
+      align-items: flex-start;
+    }
+  
+    .footer_links_container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust column width */
+        margin-bottom: 30px;
+        width: 100%;
+    }
+  
+    .footer_icons {
+      margin-bottom: 15px;
+    }
+  
+    .footer_icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+  
+    .footer_copyright {
+      text-align: left;
+    }
+  }
