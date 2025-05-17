@@ -2,7 +2,8 @@
     position: relative; /* Needed for absolute positioning of content */
     color: white;
     object-fit: contain;
-    height: 100vh; /* Or a specific height like 600px */
+    height: 56.25vw; /* for maintaiing a 16:9 aspect ratio for the banner */
+    min-height: 50vh;/* prevnets the banner from becoming too short on very narrow screens*/
     width: 100%; /* Make it full width */
     display: flex; /* Use flexbox to position content */
     flex-direction: column; /* Stack content vertically initially */
@@ -21,16 +22,16 @@
     background-position: center;
     background-repeat: no-repeat;
     /* This will hold the background image set in your React component */
-    z-index: -1; /* Place the image behind the content */
+    z-index: -2; /* Place the image behind the content */
   }
   
   .banner_contents {
-    margin-left: 30px;
+    margin-left: 1.88rem;/*30PX chanbed to rem */
     padding-top: 0; /* Remove the large top padding */
     padding-left: 0; /* Adjust as needed */
-    padding-bottom: 5rem; /* Add some bottom padding for spacing */
-    max-width: 600px; /* Limit the width of the text content */
-    z-index: 1; /* Ensure text is above the image */
+    /* padding-bottom: 5rem; Add some bottom padding for spacing */
+    max-width: 37.5rem; /* Limit the width of the text content */
+    z-index: 1;      /* Ensure text is above the image */
   }
   
   .banner_title {
@@ -44,7 +45,7 @@
     line-height: 1.3; /* Adjust line height for better readability */
     padding: 1rem 0;
     font-size: 1rem;
-    max-width: 360px;
+    max-width: 23rem;/*changed from px to rem to make it resposnive*/
     height: auto; /* Adjust height as needed */
   }
   
@@ -90,3 +91,16 @@
     );
     z-index: 1; /* Ensure fade is above the image */
   }
+
+/* Media query for smaller screens to adjust padding and potentially min-height */
+@media (min-width: 768px) {
+  .banner_contents {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    min-height: auto; /* Let height be more flexible on smaller screens */
+  }
+
+  .banner_contents {
+    margin-left: 1rem; /* Adjust left margin on smaller screens */
+  }
+}
